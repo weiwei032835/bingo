@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+	<link rel="shortcut icon" href="#" />
+	<title>換賓果卡</title>
+	<!-- JQ -->
+	<script src="js/jquery.js"></script>
+	<!-- CSS + JS -->
+	<link rel="stylesheet" href="css/style.css"/>
+	<script src="js/pick.js"></script>
+</head>
+
+<body>
+	<!--wrapper 開始-->
+	<div class="wrapper">
+
+		<!--game 開始-->
+		<div class="game_pick">
+
+			<!--inner 開始-->
+			<div class="inner">
+
+				<h2 class="title">賓果總動員</h2>
+				<!--gallery 開始-->
+				<div class="gallery">
+		
+					<!-- <div class="cell cell_0" data-id="0" data-txt="A0">A0</div>
+							<div class="cell cell_1" data-id="1" data-txt="A1">A1</div>
+							<div class="cell cell_2" data-id="2" data-txt="A2">A2</div>
+							-->
+				</div>
+				<!--gallery 結束-->
+				<!--menu 開始-->
+				<div class="menu">
+					<button class="btn_submit">送出</button>
+					<button class="btn_random">亂數</button>
+				</div>
+				<!--menu 結束-->
+				
+			</div>
+			<!--inner 結束-->
+		
+			<!--通知視窗 遊戲規則 開始-->
+			<div class="dialog rule">
+				<div class="content">
+					<h3>遊戲規則</h3>
+	
+					<ul>
+						<li>製作賓果卡，確認後送出</li>
+						<li>2023/9/23 17:00上傳截止日</li>
+					</ul>
+
+					<button class="btn btn_go">遊戲開始</button>
+				</div>
+			</div>
+			<!--通知視窗 遊戲規則 結束-->
+
+
+			
+		</div>
+		<!--game 結束-->
+
+		
+		<!--版權宣告 開始-->
+		<div class="copyright"> © ETtoday.net 2023 </div>
+		<!--版權宣告 結束-->
+	</div>
+	<!--wrapper 結束-->
+
+
+	<script>
+		//送資訊部
+		function fnSubmit(argArrTxt) {
+
+			const expiryData = new Date('2023-09-23T17:00:00');
+			const currentDate = new Date();
+
+			// 當前時間大於目標時間 不上傳 
+			if (currentDate >= expiryData) {
+				alert("已截止，無法上傳！");
+				return;
+			} else {
+				//JSON.stringify 純文字
+				alert("已送出！送到資料庫" + argArrTxt);
+			}
+		}
+	</script>
+</body>
+
+</html>

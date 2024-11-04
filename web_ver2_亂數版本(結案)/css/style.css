@@ -1,0 +1,143 @@
+    @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);*{font-family:'Noto Sans TC','微軟正黑體';}
+    *,*::before,*::after{margin:0px;padding:0px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+    .clearfix:after{content:'';display:block;height:0;clear:both;visibility:hidden;}
+    ul{list-style:none;}
+	
+	/*滿版*/
+	html,body{ height:100%; background:linear-gradient(to bottom,#1b345c 50%,#73c8b7 100%); }
+
+	/*防止 滾動更新*/
+	body{overscroll-behavior:contain;}
+	button{border:none; }
+	/*wrapper*/
+	.wrapper{width:100%;max-width:640px;height:100%;margin:0 auto;position:relative;border:0px solid #333;}
+	
+	/*版權宣告*/
+	.copyright{width:100%;font-size: 12px; text-align:center; position:absolute;left:0;bottom:5px; color:#fff; text-shadow:0px 0px 3px #000; border:0px solid blue;}
+	
+	/*遊戲說明============================*/
+	.dialog{width:100%;height:100%;position:fixed;left:0;top:0;background:rgba(0,0,0,.7);}/*display:none;*/
+	
+	/*內容器*/
+	.dialog .content{width:300px;height:190px;padding:20px;background:#fff;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);border-radius:10px;}
+	
+	.dialog.rule .content::after{background-image:url(../images/icon_rule.png);}
+	
+	/*裝飾*/
+	.dialog .content::after{content:"";display:block;width:75px;height:75px;background:no-repeat;background-size:cover;position:absolute;right:-20px;top:-42px;border:0px solid blue;}
+	
+    /*說明列表*/
+	.dialog.rule .content h3{ text-align: center;}
+	/*ul*/
+	.dialog.rule .content ul{width:95%; margin-bottom: 10px;}
+	.dialog.rule .content ul li{text-align:center;border:0px solid red;}
+	.dialog.rule .content ul li::before{content:"";display:inline-block;width:30px;height:26px;background:no-repeat;background-size:cover;margin-right:5px;}
+	
+    /*按鈕*/
+	.btn_go{ display:block; width:100px; height:40px; margin:0px auto; background:url(../images/btn2.png) center top no-repeat; background-size:100% auto; text-indent:100%; white-space:nowrap; overflow:hidden; cursor:pointer; }
+	
+    /*標題*/
+	h2.title{ width:140px; height:25px; background:url(../images/title.png) no-repeat; text-align:center; margin:0 auto 10px auto; background-size:100% auto; text-indent:-9999px; }
+	
+    /*定位============================*/
+	.game_pick{ height:100%; position:relative; user-select:none; background:url(../images/bg.png) no-repeat center top; background-size:100% auto; }
+	
+    /*inner =====================*/
+	.game_pick .inner{ width:400px; position:absolute; left:50%; top:23%; transform:translate(-50%,0%); margin:0 auto; padding:10px; }
+	
+    /*1240px*/
+	@media only screen and (min-width:1240px){
+		.game_pick .inner{ top:40%;}
+	}
+	
+	/*遊戲模組 =====================*/
+	.gallery{--sz:100px;
+	width:100%; max-width:414px; height:calc(5 * var(--sz)); position:relative; margin:0 auto; margin-bottom:10px; padding:10px; }
+	
+	/*格子樣式*/	 
+	.gallery .cell{ width:var(--sz); height:var(--sz); user-select:none;/*文字禁用選取*/ text-align: center; display:flex; flex-wrap:wrap; justify-content:center;align-content:center; align-items:center;font-size:calc(var(--sz) / 5); font-weight:500;color:#0555a9;background-color:#ffffff; padding: 5px;position:absolute;outline:2px solid #81beff; }
+	.gallery .cell strong{ display:block; width:100%; font-style:normal; display:none;/*不要id*/ }
+	.gallery .cell em{ display:block; width:100%; font-style:normal;}
+	.gallery .cell span{ display:block; width:100%;}
+	
+    /*定位格子*/
+	.gallery :nth-of-type(1){left:calc(0 * var(--sz)); top:0px; }
+	.gallery :nth-of-type(2){left:calc(1 * var(--sz)); top:0px; }
+	.gallery :nth-of-type(3){left:calc(2 * var(--sz)); top:0px; }
+	.gallery :nth-of-type(4){left:calc(3 * var(--sz)); top:0px; }
+	.gallery :nth-of-type(5){left:calc(4 * var(--sz)); top:0px; }
+	.gallery :nth-of-type(6){left:calc(0 * var(--sz)); top:var(--sz); }
+	.gallery :nth-of-type(7){left:calc(1 * var(--sz)); top:var(--sz); }
+	.gallery :nth-of-type(8){left:calc(2 * var(--sz)); top:var(--sz); }
+	.gallery :nth-of-type(9){left:calc(3 * var(--sz)); top:var(--sz); }
+	.gallery :nth-of-type(10){left:calc(4 * var(--sz)); top:var(--sz); }
+	.gallery :nth-of-type(11){left:calc(0 * var(--sz)); top:calc(2 * var(--sz)); }
+	.gallery :nth-of-type(12){left:calc(1 * var(--sz)); top:calc(2 * var(--sz)); }
+	.gallery :nth-of-type(13){left:calc(2 * var(--sz)); top:calc(2 * var(--sz)); }
+	.gallery :nth-of-type(14){left:calc(3 * var(--sz)); top:calc(2 * var(--sz)); }
+	.gallery :nth-of-type(15){left:calc(4 * var(--sz)); top:calc(2 * var(--sz)); }
+	.gallery :nth-of-type(16){left:calc(0 * var(--sz)); top:calc(3 * var(--sz)); }
+	.gallery :nth-of-type(17){left:calc(1 * var(--sz)); top:calc(3 * var(--sz)); }
+	.gallery :nth-of-type(18){left:calc(2 * var(--sz)); top:calc(3 * var(--sz)); }
+	.gallery :nth-of-type(19){left:calc(3 * var(--sz)); top:calc(3 * var(--sz)); }
+	.gallery :nth-of-type(20){left:calc(4 * var(--sz)); top:calc(3 * var(--sz)); }
+	.gallery :nth-of-type(21){left:calc(0 * var(--sz)); top:calc(4 * var(--sz)); }
+	.gallery :nth-of-type(22){left:calc(1 * var(--sz)); top:calc(4 * var(--sz)); }
+	.gallery :nth-of-type(23){left:calc(2 * var(--sz)); top:calc(4 * var(--sz)); }
+	.gallery :nth-of-type(24){left:calc(3 * var(--sz)); top:calc(4 * var(--sz)); }
+	.gallery :nth-of-type(25){left:calc(4 * var(--sz)); top:calc(4 * var(--sz)); }
+	
+    /*送出 亂數 按鈕 =====================*/	
+	.menu{ text-align: center;}
+	.menu > button{ display:inline-block; width:80px; height:35px; text-indent:100%; white-space:nowrap; overflow:hidden; cursor:pointer; }
+	button.btn_submit{ margin-right:10px; background:url(../images/btn_send.png) no-repeat; background-size:100% auto; }
+	button.btn_random{ background:url(../images/btn_random.png) no-repeat; background-size:100% auto; }
+
+
+    /*play.htm 玩賓果 =====================*/
+	
+    /*遊戲區域============================*/
+	.game_play{ height:100%; position:relative; user-select:none; background:url(../images/bg.png) no-repeat center top; background-size:100% auto; }
+
+	/*inner 定位 =====================*/
+	.game_play .inner{ width:400px; position:absolute; left:50%; top:18%; margin:0 auto; transform:translate(-50%,0%); padding:10px; }
+	/*1240px*/
+	@media only screen and (min-width:1240px){
+		.game_play .inner{ top:32%;}
+	}	
+
+    /*連線數 =====================*/	
+	h2.score{ font-size:20px; font-weight:400; letter-spacing:2px; margin-bottom:5px; color:#ffffff; }
+
+	/*上色後格子樣式*/
+	.gallery .cell.active{ color:#ffff; background:#f2383d!important; }
+
+	/*選號 ==========================*/	
+	.ansList{position: absolute;}
+	.ansList li{ display:inline-block; font-size:16px; width:30px; height:30px; line-height:30px; margin:5px; text-align:center; background-color:#ffe019; color:maroon; border-radius:50%; border:0px solid red; }
+
+	/*增加1 ==========================*/
+	.addOne{ display:block; width:80px; height:80px; color:#ffe019; font-size:50px; font-weight:900; position:fixed; left:100px; bottom:0px;text-shadow:0px 0px 5px #3e2106,0px 0px 5px #3e2106,0px 0px 5px #3e2106;
+	animation: ani_addOne 8s ease forwards; pointer-events:none; }
+		@keyframes ani_addOne {
+		0%   {transform:translate(0px, 0px); }
+		100% {transform:translate(0px, -1000px);}
+	}
+	
+	/*燈箱 ========================*/	
+	.light_box{ width:100%; height:100%; position:fixed; top:0px; left:0px; display:none; }/*none初始隱藏*/
+	
+	/*關閉按鈕*/
+	.light_box .btn_close i{font-size: 24px; cursor:pointer;color: #fff; cursor: pointer;}
+	
+	/*遮罩*/
+	.overlap{ width:100%; height:100%; background:rgba(0,0,0,0.8); position:fixed; top:0; right:0; display:none; }/*初始隱藏*/
+	/*內文*/
+	.light_box .inner{ width:80%; height:60%; position:absolute;top:20%; left:50%; transform:translate(-50%,0%);padding:20px; background:#73c8b7; }
+	
+	/*768px*/
+	@media only screen and (min-width:768px){
+		.light_box .inner{width: 414px; }
+	}
+	/*查看已選擇號碼*/
+	button.btn_pick{ display:inline-block; padding:10px 20px; background-color:#3498db; color:#ffffff; font-size:16px;  border-radius:5px; cursor:pointer; }
